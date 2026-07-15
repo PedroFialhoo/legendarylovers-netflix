@@ -3,6 +3,7 @@ import Landing from "../pages/landing/Landing";
 import Login from "../pages/login/Login";
 import Home from "../pages/home/Home";
 import Movie from "../pages/movie/Movie";
+import Intro from "../pages/intro/Intro";
 
 const Router = createBrowserRouter([
   {
@@ -11,7 +12,7 @@ const Router = createBrowserRouter([
   },
   {
     path: "/:cliente",
-    element: <Navigate to="login" replace />,
+    element: <Intro />,
   },
   {
     path: "/:cliente/login",
