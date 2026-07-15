@@ -1,38 +1,62 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 export default function Home() {
   const [movies, setMovies] = useState([]);
   const [scrolled, setScrolled] = useState(false);
+
   const navigate = useNavigate();
+  const { cliente } = useParams();
+
+  const basePath = `${import.meta.env.BASE_URL}${cliente}/`;
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
+
     window.addEventListener("scroll", handleScroll);
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
-    fetch(import.meta.env.BASE_URL + "data/movies.json")
+    fetch(`${basePath}data/movies.json`)
       .then((res) => res.json())
-      .then((data) => setMovies(data));
-  }, []);
+      .then((data) => setMovies(data))
+      .catch((err) => console.error(err));
+  }, [basePath]);
 
   return (
     <div className="min-h-screen bg-[#111] text-white font-sans">
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-500 px-4 md:px-12 py-4 flex items-center justify-between ${scrolled ? "bg-black shadow-xl" : "bg-transparent"}`}>
-        <img 
-          src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" 
-          alt="Netflix" 
+      <nav
+        className={`fixed top-0 w-full z-50 transition-all duration-500 px-4 md:px-12 py-4 flex items-center justify-between ${
+          scrolled ? "bg-black shadow-xl" : "bg-transparent"
+        }`}
+      >
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
+          alt="Netflix"
           className="w-24 md:w-28 object-contain cursor-pointer"
-          onClick={() => navigate("/")}
+          onClick={() => navigate(`/${cliente}`)}
         />
+
         <div className="flex gap-6 text-md font-light">
-          <span className="cursor-pointer hover:text-zinc-400 transition">Séries</span>
-          <span className="cursor-pointer hover:text-zinc-400 transition">Filmes</span>
-          <div className="w-8 h-8 rounded block"><img src={import.meta.env.BASE_URL + "user/perfil.jpeg"} alt="perfil" className="w-full h-full object-cover rounded-full"/></div>
+          <span className="cursor-pointer hover:text-zinc-400 transition">
+            Séries
+          </span>
+
+          <span className="cursor-pointer hover:text-zinc-400 transition">
+            Filmes
+          </span>
+
+          <div className="w-8 h-8 rounded block">
+            <img
+              src={`${basePath}user/perfil.jpeg`}
+              alt="perfil"
+              className="w-full h-full object-cover rounded-full"
+            />
+          </div>
         </div>
       </nav>
 
@@ -40,22 +64,24 @@ export default function Home() {
         <h2 className="text-xl md:text-2xl font-semibold mb-6 text-zinc-200">
           Minha lista
         </h2>
-        
+
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-x-2 gap-y-8 md:gap-x-4">
           {movies.map((movie) => (
             <div
               key={movie.id}
-              onClick={() => navigate(`/movie/${movie.id}`)}
+              onClick={() => navigate(`/${cliente}/movie/${movie.id}`)}
               className="group cursor-pointer"
-            >   
+            >
               <div className="relative aspect-2/3 overflow-hidden rounded-md transition-transform duration-300 ease-out group-hover:scale-105 group-hover:shadow-2xl">
                 <img
-                  src={import.meta.env.BASE_URL + movie.imagem.replace("/", "")}
+                  src={`${basePath}${movie.imagem.replace(/^\/+/, "")}`}
                   alt={movie.nome}
                   className="w-full h-full object-cover"
                 />
+
                 <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
+
               <h3 className="mt-3 text-sm md:text-base font-medium text-zinc-400 group-hover:text-white transition-colors truncate">
                 {movie.nome}
               </h3>

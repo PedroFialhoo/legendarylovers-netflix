@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "nome": "Como Eu Era Antes de Você",
+    "imagem": "/movies/antes.jpg",
+    "descricao": "Algumas pessoas aparecem em nossas vidas e conseguem transformar tudo ao redor. Elas mudam nossa forma de enxergar o mundo, criam novas memórias e mostram que o amor pode tornar momentos simples em lembranças que ficam para sempre."
+  },
+  {
+    "id": 2,
+    "nome": "Diário de Uma Paixão",
+    "imagem": "/movies/diario.jpg",
+    "descricao": "Uma história de amor é construída através de escolhas, momentos compartilhados e da vontade de permanecer ao lado de alguém mesmo quando a vida apresenta desafios. Algumas conexões são tão fortes que continuam existindo através do tempo."
+  },
+  {
+    "id": 3,
+    "nome": "Simplesmente Amor",
+    "imagem": "/movies/simplesmente.jpg",
+    "descricao": "O amor aparece de diversas formas: em pequenos gestos, palavras inesperadas, momentos especiais e naquelas pessoas que fazem nossos dias serem melhores. Cada história possui sua própria maneira de ser inesquecível."
+  },
+  {
+    "id": 4,
+    "nome": "Como Se Fosse a Primeira Vez",
+    "imagem": "/movies/primeira.jpg",
+    "descricao": "Todos os dias podem ser uma nova chance de se apaixonar novamente. O amor verdadeiro está em continuar escolhendo a mesma pessoa, criando novas lembranças e encontrando felicidade nos momentos mais simples."
+  },
+  {
+    "id": 5,
+    "nome": "10 Coisas Que Eu Odeio em Você",
+    "imagem": "/movies/10.jpg",
+    "descricao": "Às vezes o amor nasce de onde menos esperamos. Entre diferenças, brincadeiras e descobertas, duas pessoas podem perceber que encontraram alguém que torna seus dias mais especiais."
+  },
+  {
+    "id": 6,
+    "nome": "A Culpa é das Estrelas",
+    "imagem": "/movies/culpa.jpg",
+    "descricao": "Alguns encontros mudam completamente a nossa história. O amor está nos momentos vividos juntos, nas conversas, nos sorrisos e nas memórias que permanecem mesmo depois que o tempo passa."
+  },
+  {
+    "id": 7,
+    "nome": "Um Amor Para Recordar",
+    "imagem": "/movies/recordar.jpg",
+    "descricao": "Existem pessoas que deixam uma marca única em nossas vidas. Um amor especial é aquele que nos transforma, nos ensina e faz cada momento compartilhado valer a pena."
+  }
+]
