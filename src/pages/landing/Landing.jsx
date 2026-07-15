@@ -390,7 +390,12 @@ export default function LegendaryLovers() {
                   <p className="text-[0.92rem] text-[#c9b8dd] mb-1.5">
                     Transforme sua história em uma plataforma inspirada na Netflix.
                   </p>
-                  <Button href="https://legendarylovers-netflix.pages.dev/template/login" variant="outline">
+                  <Button 
+                    href="https://legendarylovers-netflix.pages.dev/template/login"
+                    variant="outline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Ver demonstração
                   </Button>
                 </div>
