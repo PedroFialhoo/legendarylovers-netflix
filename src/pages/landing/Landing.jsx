@@ -391,7 +391,7 @@ export default function LegendaryLovers() {
                     Transforme sua história em uma plataforma inspirada na Netflix.
                   </p>
                   <Button 
-                    href="https://legendarylovers-netflix.pages.dev/template/login"
+                    href="https://legendarylovers-netflix.pages.dev/template/"
                     variant="outline"
                     target="_blank"
                     rel="noopener noreferrer"
