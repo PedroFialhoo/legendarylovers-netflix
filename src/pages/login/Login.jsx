@@ -19,7 +19,7 @@ export default function Login() {
   if (!userData) return null;
 
   return (
-    <div className="min-h-screen bg-[#141414] flex flex-col items-center justify-center text-white">
+    <div className="min-h-[100dvh] bg-[#141414] flex flex-col items-center justify-center text-white pb-[env(safe-area-inset-bottom)] pt-[env(safe-area-inset-top)]">
       <img
         src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
         alt="Netflix"

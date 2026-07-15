@@ -28,7 +28,7 @@ export default function Home() {
   }, [basePath]);
 
   return (
-    <div className="min-h-screen bg-[#111] text-white font-sans">
+    <div className="min-h-[100dvh] bg-[#111] text-white font-sans pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)]">
       <nav
         className={`fixed top-0 w-full z-50 transition-all duration-500 px-4 md:px-12 py-4 flex items-center justify-between ${
           scrolled ? "bg-black shadow-xl" : "bg-transparent"

@@ -21,7 +21,7 @@ export default function Movie() {
   if (!movie) return null;
 
   return (
-    <div className="min-h-screen bg-[#141414] text-white p-6 md:p-12">
+    <div className="min-h-[100dvh] bg-[#141414] text-white p-6 md:p-12 pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)]">
       <button
         onClick={() => navigate(`/${cliente}/home`)}
         className="text-zinc-400 hover:text-white mb-8 flex items-center gap-2 transition"
